@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "golang.go",
+        "vscode-icons-team.vscode-icons",
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client",
+        "ms-vscode.makefile-tools"
+    ],
+    "unwantedRecommendations": []
+}

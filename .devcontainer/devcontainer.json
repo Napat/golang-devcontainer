@@ -1,0 +1,78 @@
+{
+    "name": "project-golang",
+    // Use Docker Compose: https://code.visualstudio.com/docs/devcontainers/create-dev-container#_use-docker-compose
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "goserver",
+    "runServices": [
+        "goserver"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    // Use 'portsAttributes' to set default properties for specific forwarded ports. 
+    // More info: https: //containers.dev/implementors/json_reference/#port-attributes
+    // "portsAttributes": {
+    //     "8080": {
+    //         "label": "Hello Remote World",
+    //         "onAutoForward": "notify"
+    //     }
+    // },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "vscode-icons-team.vscode-icons",
+                "ms-azuretools.vscode-docker",
+                "humao.rest-client",
+                "ms-vscode.makefile-tools"
+            ],
+            "settings": {
+                "files.eol": "\n",
+                "editor.formatOnSave": true,
+                "editor.tabSize": 4,
+                "go.buildTags": "",
+                "go.toolsEnvVars": {
+                    "CGO_ENABLED": "0"
+                },
+                "go.useLanguageServer": true,
+                "go.testEnvVars": {
+                    "CGO_ENABLED": "1"
+                },
+                "go.testFlags": [
+                    "-v",
+                    "-race"
+                ],
+                "go.testTimeout": "10s",
+                "go.coverOnSingleTest": true,
+                "go.coverOnSingleTestFile": true,
+                "go.coverOnTestPackage": true,
+                "go.lintTool": "golangci-lint",
+                "go.lintOnSave": "package",
+                "[go]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "gopls": {
+                    "usePlaceholders": false,
+                    "staticcheck": true
+                    // "vulncheck": "Imports"
+                },
+                "remote.extensionKind": {
+                    "ms-azuretools.vscode-docker": "workspace"
+                }
+            }
+        }
+    }
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},   
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [
+    //     8080
+    // ]
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "~/.postcmd.sh && go version && go mod download && go mod tidy",
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}
